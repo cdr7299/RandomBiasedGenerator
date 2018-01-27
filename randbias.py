@@ -19,12 +19,13 @@ def customrandmin():
 	'''
 	global previous
 	global resetprevious
-	if resetprevious < 15:
+	#Here we reset every 15 generations to avoid converging of the generator
+	if resetprevious < 15: 
 		randtime = ((previous * 9))
 		resetprevious+=1
 	else:
 		resetprevious = 0
-		getseed()
+		getseed() #Providing a new seed to our generator
 		randtime = (((previous + 11) * 9))
 			
 	
